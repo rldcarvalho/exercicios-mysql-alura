@@ -1,0 +1,22 @@
+USE SUCOS_VENDAS;
+
+SELECT * FROM tabela_de_produtos;
+
+SELECT * FROM tabela_de_produtos order by PRECO_DE_LISTA;
+
+SELECT * FROM tabela_de_produtos order by PRECO_DE_LISTA desc;
+
+SELECT * FROM tabela_de_produtos order by NOME_DO_PRODUTO;
+
+SELECT * FROM tabela_de_produtos order by NOME_DO_PRODUTO DESC;
+
+SELECT * FROM tabela_de_produtos order by EMBALAGEM, NOME_DO_PRODUTO;
+
+SELECT * FROM tabela_de_produtos order by EMBALAGEM DESC, NOME_DO_PRODUTO ASC;
+
+SELECT CODIGO_DO_PRODUTO FROM tabela_de_produtos WHERE NOME_DO_PRODUTO = 'Linha Refrescante - 1 Litro - Morango/Limão';
+
+SELECT * FROM itens_notas_fiscais WHERE CODIGO_DO_PRODUTO = '1101035' ORDER BY QUANTIDADE DESC;
+
+
+
