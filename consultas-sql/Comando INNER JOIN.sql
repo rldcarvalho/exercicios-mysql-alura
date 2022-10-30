@@ -1,0 +1,24 @@
+USE SUCOS_VENDAS;
+
+SELECT * FROM tabela_de_vendedores;
+SELECT * FROM notas_fiscais;
+
+SELECT * FROM tabela_de_vendedores A INNER JOIN notas_fiscais B ON A.MATRICULA = B.MATRICULA;
+
+SELECT A.MATRICULA, A.NOME, COUNT(*) FROM tabela_de_vendedores A INNER JOIN notas_fiscais B
+ON A.MATRICULA = B.MATRICULA
+GROUP BY A.MATRICULA, A.NOME;
+
+SELECT A.MATRICULA, A.NOME, COUNT(*) FROM 
+tabela_de_vendedores A, notas_fiscais B
+WHERE A.MATRICULA = B.MATRICULA
+GROUP BY A.MATRICULA, A.NOME;
+
+SELECT * FROM notas_fiscais;
+SELECT * FROM itens_notas_fiscais;
+
+SELECT YEAR(A.DATA_VENDA), SUM(B.QUANTIDADE * B.PRECO) AS FATURAMENTO_ANUAL FROM notas_fiscais A INNER JOIN itens_notas_fiscais B ON A.NUMERO = B.NUMERO
+GROUP BY YEAR(A.DATA_VENDA);
+
+
+
